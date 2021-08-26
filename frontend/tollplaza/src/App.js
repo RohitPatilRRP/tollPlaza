@@ -11,31 +11,35 @@ import {
 function App() {
   return (
     <div className="App">
-      <h1>Toll Plaza</h1>
-      <div>
-        <Router>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/generate">Generate Receipt</Link>
-              </li>
-              <li>
-                <Link to="/validate">Validate Receipt</Link>
-              </li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route path="/generate">
-              <GenerateReceipt />
-            </Route>
-            <Route path="/validate">
-              <ValidateReceipt />
-            </Route>
-          </Switch>
-        </Router>
+      <center>
+        <h1>Toll Plaza</h1>
+        <div>
+          <Router>
+            <center>
+              <nav className="horizontal">
+                <ul className="nobull">
+                  <li className="horizontalLi">
+                    <Link to="/generate">Generate Receipt</Link>
+                  </li>
+                  <li className="horizontalLi">
+                    <Link to="/validate">Validate Receipt</Link>
+                  </li>
+                </ul>
+              </nav>
+            </center>
+            <Switch>
+              <Route path="/generate">
+                <GenerateReceipt />
+              </Route>
+              <Route path="/validate">
+                <ValidateReceipt />
+              </Route>
+            </Switch>
+          </Router>
         </div>
-      </div>
-      );
+      </center>
+    </div>
+  );
 }
 
-      export default App;
+export default App;

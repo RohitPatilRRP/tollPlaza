@@ -13,22 +13,27 @@ class ValidateReceipt extends Component {
             body: JSON.stringify(this.state)
         }).then((result) => {
             result.json().then((resp) => {
-                alert(JSON.stringify(resp));
+                alert(''
+                    + "" + resp.msg + "\n\n\n"
+                    + '▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬\n\n'
+                );
             });
         });
     }
     render() {
         return <div>
-            <div>
-                <p>Validate receipt</p>
-            </div>
-            <div>
-                <p>Enter Receipt Number</p>
-                <input type="text"
-                    onChange={(e) => { this.setState({ receiptId: e.target.value }) }}
-                /><br /><br />
-                <button onClick={() => this.validateReceipt()}> Check </button>
-            </div>
+            <center>
+                <div>
+                    <p>Validate receipt</p>
+                </div>
+                <div>
+                    <p>Enter Receipt Number</p>
+                    <input type="text"
+                        onChange={(e) => { this.setState({ receiptId: e.target.value }) }}
+                    /><br /><br />
+                    <button onClick={() => this.validateReceipt()}> Check </button>
+                </div>
+            </center>
         </div >
     }
 }
