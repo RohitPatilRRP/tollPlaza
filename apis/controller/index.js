@@ -30,6 +30,10 @@ const validateReceipt = async (req, res) => {
         receiptId
     } = req.body;
     const result = await receipts.findOne({ _id: receiptId });
+    if(!result)  return res.status(200).send({
+        code: 404,
+        msg: `Receipt not found`
+    });
     const currDate = moment().format('DDMMYYYY');
     if (result.date == currDate && result.isReturn == "true") {
         return res.status(200).send({
