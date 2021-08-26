@@ -13,6 +13,10 @@ const generateReceipt = async (req, res) => {
             msg: "Invalid input"
         })
     }
+    let amount = 100;
+    if (isReturn == "true") {
+        amount = 200;
+    }
     const timeStamp = new Date();
     const date = moment(timeStamp).format('DDMMYYYY');
     const time = moment(timeStamp).format('HH:mm:yy');
@@ -20,7 +24,9 @@ const generateReceipt = async (req, res) => {
         vehicleRegNo,
         isReturn,
         date,
-        time
+        time,
+        amount,
+        issueDate:moment(timeStamp).format('DD/MM/YY hh:mm A')
     });
     return res.status(200).json(result);
 }
@@ -30,7 +36,7 @@ const validateReceipt = async (req, res) => {
         receiptId
     } = req.body;
     const result = await receipts.findOne({ _id: receiptId });
-    if(!result)  return res.status(200).send({
+    if (!result) return res.status(200).send({
         code: 404,
         msg: `Receipt not found`
     });
@@ -49,15 +55,15 @@ const validateReceipt = async (req, res) => {
 
 const findAllReceipts = async (req, res) => {
     const result = await receipts.find({});
-    
+
     return res.status(200).send(result);
 }
 
-const deleteReceipts = async (req,res) => {
+const deleteReceipts = async (req, res) => {
     await receipts.remove({});
     return res.status(200).send({
-        code:200,
-        msg:"Deleted all receipts"
+        code: 200,
+        msg: "Deleted all receipts"
     })
 }
 
