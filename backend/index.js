@@ -12,6 +12,11 @@ app.get('/', (req, res) => {
     })
 });
 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    next();
+});
+
 app.use('/tollplaza', routes)
 
 module.exports = app;

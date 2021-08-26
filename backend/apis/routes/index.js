@@ -8,7 +8,7 @@ const {
 } = require('../controller');
 
 routes.post('/generateReceipt', generateReceipt);
-routes.get('/validatereceipt', validateReceipt);
+routes.post('/validatereceipt', validateReceipt);
 routes.get('/findAllreceipts', findAllReceipts);
 routes.get('/deleteAllreceipts', deleteReceipts);
 
