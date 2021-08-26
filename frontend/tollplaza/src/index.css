@@ -20,3 +20,22 @@ code {
   display: inline;
   margin: 10px;
 }
+
+
+.outerBox {
+  background-color: "#e0e0e0";
+  padding: "10px";
+  align-items: "center";
+  width: "70%";
+}
+
+.button{
+  background-color: "#4CAF50";
+  border: "none";
+  color: "white";
+  padding: "15px 32px";
+  text-align: "center";
+  text-decoration: "none";
+  display: "inline-block";
+  font-size: "16px";
+}

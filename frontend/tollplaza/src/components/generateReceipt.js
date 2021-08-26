@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class GenerateReceipt extends Component {
     generateReceipt() {
         console.log(`state`, this.state);
@@ -27,30 +26,54 @@ class GenerateReceipt extends Component {
     }
     render() {
         const choices = ["Yes", "No"];
-        return <div>
+        return <div style={{
+            'background-color': "#e0e0e0",
+            "padding": "10px",
+            "alignContent": "center",
+            "width": "70%"
+        }}>
             <center>
-                <div>
+                <div style={{
+                    "padding": "10px"
+                }}>
                     <h3>Generate receipt</h3>
                 </div>
                 <br />
                 <div>
-                    <span style={{ display: "inline-block", width: "20%" }}>Enter Vehicle Number</span>
-                    <input type="text"
-                        onChange={(e) => { this.setState({ vehicleRegNo: e.target.value }) }}
-                    /><br /><br />
-                    <span style={{ display: "inline-block", width: "20%" }}>Is Return Tour</span>
-                    {
-                        choices.map(choice => (
-                            <div className="horizontalLi" >
-                                <input type="radio" value={choice} name='radiovalues' onChange={(e) => {
-                                    this.setState({ isReturn: (e.target.value === "Yes") ? "true" : "false" })
-                                }} />
-                                <b>{choice}</b>
-                            </div>
-                        ))
-                    }
-                    <br /><br />
-                    <button onClick={() => this.generateReceipt()}> Generate </button>
+                    <div style={{
+                        "padding": "10px"
+                    }}>
+                        <span style={{ display: "inline-block", width: "20%" }}>Vehicle Registration No.</span>
+                        <input type="text"
+                            onChange={(e) => { this.setState({ vehicleRegNo: e.target.value }) }}
+                        /><br /><br />
+                    </div>
+                    <div style={{
+                        "padding": "20px"
+                    }}>
+                        <span style={{ display: "inline-block", width: "20%" }}>Return Journey</span>
+                        {
+                            choices.map(choice => (
+                                <div className="horizontalLi" >
+                                    <input type="radio" value={choice} name='radiovalues' onChange={(e) => {
+                                        this.setState({ isReturn: (e.target.value === "Yes") ? "true" : "false" })
+                                    }} />
+                                    <b>{choice}</b>
+                                </div>
+                            ))
+                        }
+                        <br /><br />
+                    </div>
+                    <button style={{
+                        "background-color": "#4CAF50",
+                        "border": "none",
+                        "color": "white",
+                        "padding": "15px 32px",
+                        "text-align": "center",
+                        "text-decoration": "none",
+                        "display": "inline-block",
+                        "font-size": "16px"
+                    }} onClick={() => this.generateReceipt()}> Generate </button>
                 </div>
             </center>
         </div >

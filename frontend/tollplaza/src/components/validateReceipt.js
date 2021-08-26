@@ -21,17 +21,34 @@ class ValidateReceipt extends Component {
         });
     }
     render() {
-        return <div>
+        return <div style={{
+            'background-color': "#e0e0e0",
+            "padding": "10px",
+            "alignContent": "center",
+            "width": "70%"
+        }}>
             <center>
                 <div>
-                    <p>Validate receipt</p>
+                    <h3>Validate receipt</h3>
                 </div>
-                <div>
-                    <p>Enter Receipt Number</p>
+                <div style={{
+                    "padding": "40px"
+                }}>
+                    <span style={{ display: "inline-block", width: "20%" }}> Enter Receipt Number</span>
                     <input type="text"
                         onChange={(e) => { this.setState({ receiptId: e.target.value }) }}
                     /><br /><br />
-                    <button onClick={() => this.validateReceipt()}> Check </button>
+                    <button style={{
+                        "background-color": "#4CAF50",
+                        "border": "none",
+                        "color": "white",
+                        "margin":"50px 0px 0px 0px",
+                        "padding": "15px 32px",
+                        "text-align": "center",
+                        "text-decoration": "none",
+                        "display": "inline-block",
+                        "font-size": "16px"
+                    }} onClick={() => this.validateReceipt()}> Check </button>
                 </div>
             </center>
         </div >

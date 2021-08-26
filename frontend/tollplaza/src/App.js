@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,13 @@ function App() {
               </nav>
             </center>
             <Switch>
+              <Route exact path="/"
+                render={() => {
+                  return (
+                    <Redirect to="/generate" />
+                  )
+                }}
+              />
               <Route path="/generate">
                 <GenerateReceipt />
               </Route>
