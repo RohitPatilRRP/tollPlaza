@@ -1,0 +1,17 @@
+
+
+TEST results
+
+```
+> mocha test/test.js
+
+
+
+  API tests
+    ✔ checking server health
+    ✔ should create receipt for vehicle
+    ✔ should validate receipt for vehicle
+
+
+  3 passing (60ms)
+  ```
