@@ -27,7 +27,8 @@ API Test results
   3 passing (60ms)
 
 ```
+## Generate Receipt
 ![alt text](https://github.com/RohitPatilRRP/tollPlaza/blob/main/screenshots/generate.png)
 
-##Validate Receipt
+## Validate Receipt
 ![alt text](https://github.com/RohitPatilRRP/tollPlaza/blob/main/screenshots/validate.png)
