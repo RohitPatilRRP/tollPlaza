@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const routes = require('./apis/routes');
 
@@ -17,6 +18,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/tollplaza', routes)
+app.use('/tollplaza', cors(), routes)
 
 module.exports = app;

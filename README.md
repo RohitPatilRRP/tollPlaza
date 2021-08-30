@@ -8,7 +8,7 @@ Frontend
 - Server will start at 127.0.0.1:8080
 
 Backend
--cd in Backend
+-cd in /backend
 -Run npm install
 -Run npm test for testing APIs
 -Run npm start
